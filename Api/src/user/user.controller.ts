@@ -1,4 +1,12 @@
-import { Controller } from '@nestjs/common';
+import { Controller, HttpCode, HttpStatus, Post } from "@nestjs/common"
 
-@Controller('user')
-export class UserController {}
+@Controller("user")
+export class UserController {
+
+    @Post()
+    @HttpCode(HttpStatus.CREATED)
+	async create() {
+		return true
+	}
+
+}
